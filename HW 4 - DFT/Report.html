@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+      Discrete Fourier Transform - Mustafa Hussain
+    </title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="misc/bootstrap.css" rel="stylesheet">
+    
+    <link href="misc/report.css" rel="stylesheet">
+    
+  </head>
+
+  <body>
+  
+    <div class="container">
+
+      <h1>Discrete Fourier Transform</h1>
+      Mustafa Hussain<br>
+      Digital Image Processing<br>
+      Dr. Anas Salah Eddin<br>
+      Spring 2015
+
+      <h2>DFT on an image</h2>
+      
+      <figure>
+        
+        <img src="input\fabioTiny.JPG" alt="Original"><br>
+        <img src="output\fabioTinyDFT.PNG" alt="DFT">
+        <img src="output\fabioTinyFFT.PNG" alt="FFT">
+        <img src="output\fabioTinyDFTMinusFFT.JPG" alt="DFT Minus FFT">
+        
+        <figcaption>
+        
+          <em>Top: </em>Original;
+          <em>Bottom-left: </em>My DFT;
+          <em>Bottom-middle: </em>Stock FFT;
+          <em>Bottom-right: </em>The difference between my DFT and the stock FFT.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        My DFT does exactly the same thing as the FFT, at least at this size and with this picture.
+      </p>
+      
+      <h2>Comparing DFT to FFT: Speed</h2>
+      
+      <figure>
+        
+        <img class="chart" src="timing.PNG" alt="Comparison of speed of DFT and FFT">
+        
+        <figcaption>
+          Comparison of speed of DFT and FFT.
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        FFT is far faster than DFT. On a 32x32 image, the runtime of DFT was becoming intolerable (I was using running each algorithm multiple times on each image size), while the runtime of FFT was still too small to measure.
+      </p>
+      
+      <h2>The Fun Part</h2>
+      
+      <figure>
+        
+        <img src="input\hawaii.JPG" alt="Hawaii">
+        <img src="input\basketball.JPG" alt="Basketball">  <br>
+        <img src="output\hawaiiSpectrum.JPG" alt="Hawaii Spectrum">
+        <img src="output\basketballSpectrum.JPG" alt="Basketball Spectrum"> <br>
+        <img src="output\hawaiiPhaseAngle.JPG" alt="Hawaii Phase Angle">
+        <img src="output\basketballPhaseAngle.JPG" alt="Basketball Phase Angle"> <br>
+        
+      </figure>
+      
+      <figcaption>
+        <em>Top:</em> Originals; <br><em>Middle:</em> Spectrums; <br><em>Bottom:</em> Phase Angles
+      </figcaption>
+      
+      <p>
+        The spectrum of the Hawaiian skyline has major vertical and horizontal components, reminiscent of the major vertical and horizontal components of the buildings. The tall, tilted vertical bar in the spectrum of the basketball picture reminds us of the vertical, angled structures in the background.
+      </p>
+      
+      <p>
+        The phase angle images are less interesting. The angles are actually displayed as intensities, which is a poor conceptual mapping. Angled arrows would likely be better, but would be more difficult to program.
+      </p>
+        
+      <figure>
+        <img src="output\hawaiiReconstructedIFT.JPG" alt="Hawaii Reconstructed by IFT">
+        <img src="output\basketballReconstructedIFT.JPG" alt="Basketball Reconstructed by IFT"> <br>
+        <img src="output\hawaiiReconstructedFromSpectrum.JPG" alt="">
+        <img src="output\basketballReconstructedFromSpectrum.JPG" alt=""> <br>
+        <img src="output\hawaiiReconstructedFromPhaseAngle.JPG" alt="">
+        <img src="output\basketballReconstructedFromPhaseAngle.JPG" alt=""> <br>
+        
+      </figure>
+      
+      <figcaption>
+        <em>Top:</em> Reconstructed via Inverse Fourier Transform; <br><em>Middle:</em> Reconstructed from Spectrum (Discarded Phase Angle); <br><em>Bottom:</em> Reconstructed from Phase Angle (Discarded Spectrum)
+      </figcaption>
+      
+      <p>
+        The reconstructions that regarded only the magnitudes look like stylish modern-art watercolors on fibrous paper. The basketball one is blurry and has strong horizontal strokes; maybe this is because of the horizontal motion blur in the original image. Likewise, the strong vertical strokes in the one from the Hawaiian skyline may have come from the tall structures. However, this is murky speculation.
+      </p>
+      
+      <p>
+        In the images reconstructed from phase angles, we can see shapes; in the skyline, we see what looks like the outlines of the buildings; in the basketball one, we see what looks like the outline of a player&apos;s legs.
+      </p>
+      
+      <figure>
+        <img src="output\hawaiiSpectrumBasketballPhaseAngle.JPG" alt="Reconstructed from Hawaii Spectrum and Basketball Phase Angle.">
+        <img src="output\basketballSpectrumHawaiiPhaseAngle.JPG" alt="Reconstructed from Basketball Spectrum and Hawaii Phase Angle."> <br>        
+      </figure>
+      
+      <figcaption>
+        <em>Left:</em> Reconstructed from Hawaii Spectrum and Basketball Phase Angle; <br><em>Right:</em> Reconstructed from Basketball Spectrum and Hawaii Phase Angle
+      </figcaption>
+      
+      <p>
+        In the left Frankenstein image, it looks like the basketball players are playing in extreme weather conditions. In the right one, we see a blurred skyline, as if we are flying by at incredible speed.
+      </p>
+      
+    </div>
+    
+  </body>
+  
+</html>

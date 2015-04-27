@@ -1,0 +1,22 @@
+img{
+  height: auto;
+  width: 16em;
+}
+
+figcaption{
+  font-size: 85%;
+}
+
+p{
+  margin-top: 1em;
+}
+
+h1, h2{
+  color: #00aa88;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+h2{
+  font-size: 1.2em;
+}

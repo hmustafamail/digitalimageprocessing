@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+      Spatial Filtering - Mustafa Hussain
+    </title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="misc/bootstrap.css" rel="stylesheet">
+    
+    <link href="misc/report.css" rel="stylesheet">
+    
+  </head>
+
+  <body>
+  
+    <div class="container">
+
+      <h1>Spatial Filtering</h1>
+      Mustafa Hussain<br>
+      Digital Image Processing<br>
+      Dr. Anas Salah Eddin<br>
+      Spring 2015
+
+      <h2>Linear Smoothing Filter (Averaging Filter)</h2>
+      
+      <figure>
+        
+        <img src="input\fabio.JPG" alt="Fabio">
+        <img src="output\fabioAveraging.JPG" alt="Averaging Filtered"><br>
+        
+        <figcaption>
+        
+          <em>Left: </em>Original;
+          <em>Right: </em>Averaging Filtered.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        The result is a little blurry. The noise is gone, but so is the definition!
+      </p>
+      
+      <h2>Nonlinear Smoothing Filter (Gaussian Filter)</h2>
+      
+      <figure>
+        
+        <img src="input\fabio.JPG" alt="Fabio">
+        <img src="output\fabioGauss.JPG" alt="Gaussian Filtered"><br>
+        
+        <figcaption>
+        
+          <em>Left: </em>Original;
+          <em>Right: </em>Gaussian Filtered.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        The box blur (Averaging Filter) achieved about the same results as this one. The corners of the white square are a bit more rounded than the result from the box blur.
+      </p>
+      
+      <h2>Nonlinear (order-Statistics) Filter (Median Filter)</h2>
+      
+      <figure>
+        
+        <img src="input\fabio.JPG" alt="Fabio">
+        <img src="output\fabioMedian.JPG" alt="Median Filtered"><br>
+        
+        <figcaption>
+        
+          <em>Left: </em>Original;
+          <em>Right: </em>Median Filtered.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        This version has a notable posterization effect; if one zooms in, one will notice areas of  color resembling rice paddies. The white square appears to have had its corners trimmed at 45-degree angles.
+      </p>
+      
+      <h2>Second Derivative Sharpening Filter (Laplacian Filter)</h2>
+      
+      <figure>
+        
+        <img src="input\bball.JPG" alt="Fabio">
+        <img src="output\bballLaplace.JPG" alt="Laplacian Filtered"><br>
+        
+        <figcaption>
+        
+          <em>Left: </em>Original;
+          <em>Right: </em>Laplacian Filtered.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        I added the intensity-scaled second derivative of the noise-reduced image to the original image. The result is a crisper image. The lines on the basketball and the horizontal lines on the back wall have become more defined.
+      </p>
+      
+      <h2>First Derivative Filter for Edge Detection (Sobel Filter)</h2>
+      
+      <figure>
+        
+        <img src="input\bball.JPG" alt="Fabio">
+        <img src="output\bballXYSobel.JPG" alt="XY-Sobel Filtered"><br>
+        <img src="output\bballXSobel.JPG" alt="X-Sobel Filtered">
+        <img src="output\bballYSobel.JPG" alt="Y-Sobel Filtered">
+        
+        <figcaption>
+        
+          <em>Upper-left: </em>Original;
+          <em>Upper-right: </em>X and Y-Directions Combined;
+          <em>Lower-left: </em>X-Direction Only;
+          <em>Lower-right: </em>Y-Direction only.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        The image was median filtered before performing the Sobel filters, in order to avoid enhancing noise. The X and Y filters brought out the horizontal and vertical features of the image, and the combined image enhances the entire contour. It could have been blurred more broadly; notice that the right-hand player&apos;s entire arm is filled in.
+      </p>
+      
+    </div>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+      Discrete Fourier Transform - Mustafa Hussain
+    </title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="misc/bootstrap.css" rel="stylesheet">
+    
+    <link href="misc/report.css" rel="stylesheet">
+    
+  </head>
+
+  <body>
+  
+    <div class="container">
+
+      <h1>Filtering in the Frequency Domain</h1>
+      Mustafa Hussain<br>
+      Digital Image Processing<br>
+      Dr. Anas Salah Eddin<br>
+      Spring 2015
+
+      <h2>Ideal Filters</h2>
+      
+      <figure>
+        
+        <img src="input\testImage1.JPG" alt="Original"><br>
+        <img src="output\idealLowpass1.JPG" alt="Ideal Lowpass 1">
+        <img src="output\idealLowpass2.JPG" alt="Ideal Lowpass 2">
+        <img src="output\idealLowpass3.JPG" alt="Ideal Lowpass 3"><br>
+        <img src="output\idealHighpass1.JPG" alt="Ideal Highpass 1">
+        <img src="output\idealHighpass2.JPG" alt="Ideal Highpass 2">
+        <img src="output\idealHighpass3.JPG" alt="Ideal Highpass 3">
+        
+        <figcaption>
+        
+          <em>Top: </em>Original; </br>
+          <em>Middle: </em>Ideal lowpass-filtered variations with varying cutoff frequencies;  </br>
+          <em>Bottom: </em>Ideal highpass-filtered variations with varying frequencies.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        The ringing is apparent in the squares of the middle images.
+      </p>
+      
+      <h2>Gaussian Filters</h2>
+      
+      <figure>
+        
+        <img src="input\testImage1.JPG" alt="Original"><br>
+        <img src="output\gaussianLowpass1.JPG" alt="Gaussian Lowpass 1">
+        <img src="output\gaussianLowpass2.JPG" alt="Gaussian Lowpass 2">
+        <img src="output\gaussianLowpass3.JPG" alt="Gaussian Lowpass 3"><br>
+        <img src="output\gaussianHighpass1.JPG" alt="Gaussian Highpass 1">
+        <img src="output\gaussianHighpass2.JPG" alt="Gaussian Highpass 2">
+        <img src="output\gaussianHighpass3.JPG" alt="Gaussian Highpass 3">
+        
+        <figcaption>
+        
+          <em>Top: </em>Original;  </br>
+          <em>Middle: </em>Gaussian lowpass-filtered variations with varying cutoff frequencies;  </br>
+          <em>Bottom: </em>Gaussian highpass-filtered variations with varying frequencies.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        The ringing is gone!
+      </p>
+      
+      <h2>Laplace (Frequency Domain)</h2>
+      
+      <figure>
+        
+        <img src="input\testImage1.JPG" alt="Original">
+        <img src="output\laplace.JPG" alt="Laplace">
+        
+        <figcaption>
+        
+          <em>Left: </em>Original;  
+          <em>Right: </em>Laplace-filtered variation.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        We can only see the most prominent changes in the image, which surround the square.
+      </p>
+      
+      
+      <h2>Laplace of a Gaussian</h2>
+      
+      <figure>
+        
+        <img src="input\testImage1.JPG" alt="Original"><br>
+        <img src="output\laplaceOfGaussian1.JPG" alt="Laplace of Gaussian 1">
+        <img src="output\laplaceOfGaussian2.JPG" alt="Laplace of Gaussian 2">
+        <img src="output\laplaceOfGaussian3.JPG" alt="Laplace of Gaussian 3">
+        
+        <figcaption>
+        
+          <em>Top: </em>Original;  </br>
+          <em>Bottom: </em>Laplace-filtered, gaussian-lowpass-filtered variations with varying lowpass frequencies.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        This is...psychedelic. If it were made into an animation, it would probably make a great title screen for an indie-retro game.
+      </p>
+      
+      <h2>Comparison with Spatial Versions</h2>
+      
+      <figure>
+        
+        <img src="input\testImage1Gauss4Spatial.JPG" alt="Gaussian Spatial">
+        <img src="input\testImage1LaplaceSpatial.JPG" alt="Laplace Spatial"></br>
+        <img src="output\gaussianLowpass3.JPG" alt="Gaussian Frequency">
+        <img src="output\laplace.JPG" alt="Laplace Frequency">
+        
+        <figcaption>
+        
+          <em>Left Column: </em>Gaussians;  <em>Right Column: </em>Laplace-filtered;  </br>
+          <em>Top Row: </em>Spatial;  <em>Bottom Row: </em>Frequency.
+          
+        </figcaption>
+        
+      </figure>
+      
+      <p>
+        The Gaussians performed in the spatial and frequency domains are similar, but the Laplace filtering performed in the spatial and frequency domains are completely different. Some implementation must have been incorrect.
+      </p>
+      
+    </div>
+    
+  </body>
+ 
+</html>

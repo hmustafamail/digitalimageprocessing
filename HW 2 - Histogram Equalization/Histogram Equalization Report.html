@@ -1,0 +1,135 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+      Histogram Equalization - Mustafa Hussain
+    </title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="misc/bootstrap.css" rel="stylesheet">
+    
+    <link href="misc/report.css" rel="stylesheet">
+    
+  </head>
+
+  <body>
+  
+    <div class="container">
+
+      <h1>Histogram Equalization</h1>
+      Mustafa Hussain<br>
+      Digital Image Processing<br>
+      Dr. Anas Salah Eddin<br>
+      Spring 2015
+
+      <h2>Running Histogram Equalization on Types of Images</h2>
+      
+      <h3>Dark Image</h3>
+      
+      <figure>
+        <img src="input\fabioDark.JPG" alt="Fabio Dark">
+        <img src="output\fabioDarkHistogramEqualized.JPG" alt="Fabio Dark Histogram Equalized"><br>
+        <img src="output\fabioDarkHistogram.JPG" alt="Fabio Dark Histogram">
+        <img src="output\fabioDarkHistogramEqualizedHistogram.JPG" alt="Fabio Dark Histogram Equalized Histogram">
+        <img src="output\fabioDarkTransformationFunction.JPG" alt="">
+        <figcaption>
+          <em>Upper-left: </em>Dark image;
+          <em>Upper-right: </em>Histogram-equalized dark image;
+          <em>Lower-left: </em>Dark image histogram;
+          <em>Lower-middle: </em>Equalized dark image histogram;
+          <em>Lower-right: </em>Transformation function
+        </figcaption>
+      </figure>
+      
+      <p>
+        The equalized image feels much more clear than the original. The bricks have become far more visible, and the hairline, especially near the parting, has become more clearly contoured.
+      </p>
+      
+      <p>
+        The original histogram clearly drops off to the right-hand side, while the equalized histogram is far more level.
+      </p>
+      
+      <h3>Bright Image</h3>
+      
+      <figure>
+        <img src="input\fabioBright.JPG" alt="Fabio Bright">
+        <img src="output\fabioBrightHistogramEqualized.JPG" alt="Fabio Bright Histogram Equalized"><br>
+        <img src="output\fabioBrightHistogram.JPG" alt="Fabio Bright Histogram">
+        <img src="output\fabioBrightHistogramEqualizedHistogram.JPG" alt="Fabio Bright Histogram Equalized Histogram">
+        <img src="output\fabioBrightTransformationFunction.JPG" alt="">
+        <figcaption>
+          <em>Upper-left: </em>Bright image;
+          <em>Upper-right: </em>Histogram-equalized Bright image;
+          <em>Lower-left: </em>Bright image histogram;
+          <em>Lower-middle: </em>Equalized Bright image histogram;
+          <em>Lower-right: </em>Transformation function
+        </figcaption>
+      </figure>
+      
+      <p>
+        In the bright image, Fabio&apos;s face appears washed out. Amazingly, in the equalized image, the cheekbone structure, nose, lips, and lower eyelids are recovered, and much more texture is visible in the hair.
+      </p>
+      
+      <p>
+        The original histogram has more weight on the right-hand side, and sort of a bowl structure, while the equalized histogram is more filled in and even.
+      </p>
+      
+      <h3>Low Contrast Image</h3>
+      
+      <figure>
+        <img src="input\fabioLowContrast.JPG" alt="Fabio Low Contrast">
+        <img src="output\fabioLowContrastHistogramEqualized.JPG" alt="Fabio Low Contrast Histogram Equalized"><br>
+        <img src="output\fabioLowContrastHistogram.JPG" alt="Fabio Low Contrast Histogram">
+        <img src="output\fabioLowContrastHistogramEqualizedHistogram.JPG" alt="Fabio Low Contrast Histogram Equalized Histogram">
+        <img src="output\fabioLowContrastTransformationFunction.JPG" alt="">
+        <figcaption>
+          <em>Upper-left: </em>Low Contrast image;
+          <em>Upper-right: </em>Histogram-equalized Low Contrast image;
+          <em>Lower-left: </em>Low Contrast image histogram;
+          <em>Lower-middle: </em>Equalized Low Contrast image histogram;
+          <em>Lower-right: </em>Transformation function
+        </figcaption>
+      </figure>
+      
+      <p>
+        The difference here is striking. The low contrast image is reminiscent of a smoke-filled room. In the equalized image, the bricks and facial features are far more visible, and it overall feels more "clear".
+      </p>      
+      
+      <p>
+        While the original histogram is tight and constricted, the equalized histogram is filled out.
+      </p>
+      
+      <h3>High Contrast Image</h3>
+      
+      <figure>
+        <img src="input\fabioHighContrast.JPG" alt="Fabio High Contrast">
+        <img src="output\fabioHighContrastHistogramEqualized.JPG" alt="Fabio High Contrast Histogram Equalized"><br>
+        <img src="output\fabioHighContrastHistogram.JPG" alt="Fabio High Contrast Histogram">
+        <img src="output\fabioHighContrastHistogramEqualizedHistogram.JPG" alt="Fabio High Contrast Histogram Equalized Histogram">
+        <img src="output\fabioHighContrastTransformationFunction.JPG" alt="">
+        <figcaption>
+          <em>Upper-left: </em>High Contrast image;
+          <em>Upper-right: </em>Histogram-equalized High Contrast image;
+          <em>Lower-left: </em>High Contrast image histogram;
+          <em>Lower-middle: </em>Equalized High Contrast image histogram;
+          <em>Lower-right: </em>Transformation function
+        </figcaption>
+      </figure>
+      
+      <p>
+        While some shadowing on Fabio&apos;s face has become more visible, unlike in previous examples, the bricks have not sprung into clarity. Additionally, the facial shadowing has the appearance of a sponge. Rather than becoming more natural to the eye, the equalized image remains poster-like.
+      </p>
+      
+      <p>
+        The "equalized" histogram, far from being levelled, has somehow become more tight and restricted. This one appears to have backfired.
+      </p>
+      
+    </div>
+    
+  </body>
+  
+</html>
